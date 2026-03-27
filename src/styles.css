@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
 }
-#task-list  .deletebtn {
+#task-list .deletebtn {
   color: white;
   background-color: red;
 }
