@@ -24,7 +24,8 @@ function deleteParent(event) {
 }
 
 function editTodo(event) {
-  let newTodo = prompt("Edit Todo");
+  let oldTodo = event.target.parentNode.children[0].textContent;
+  let newTodo = prompt("Edit Todo", oldTodo);
   if (newTodo !== "" && newTodo != null) {
     let li = createLi(newTodo);
     event.target.parentNode.replaceWith(li)
