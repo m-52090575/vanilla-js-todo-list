@@ -10,10 +10,14 @@ main.addEventListener("submit", (event) => {
     let span = document.createElement("span");
     span.textContent = formInput;
 
-    let button = document.createElement("button");
-    button.textContent = "Delete";
-    button.addEventListener("click", deleteParent);
-    li.append(span, button);
+    let editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("deletebtn");
+    deleteButton.addEventListener("click", deleteParent);
+    li.append(span, editButton, deleteButton);
 
 
     taskList.append(li);
@@ -22,7 +26,7 @@ main.addEventListener("submit", (event) => {
   }
 });
 
-let deletebtns = main.querySelectorAll("#task-list button");
+let deletebtns = main.getElementsByClassName("deletebtn");
 for (var i = 0; i < deletebtns.length; i++) {
   deletebtns[i].addEventListener("click", deleteParent);
 }
