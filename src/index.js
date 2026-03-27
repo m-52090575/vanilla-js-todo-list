@@ -1,5 +1,4 @@
 var main = document.getElementById("main");
-//var submitbtn = document.getElementById("submitbtn");
 var taskList = document.getElementById("task-list");
 
 main.addEventListener("submit", (event) => {
@@ -31,8 +30,4 @@ for (var i = 0; i < deletebtns.length; i++) {
 
 function deleteParent(event) {
   event.target.parentNode.parentNode.removeChild(event.target.parentNode);
-  // removes the delete button
-  //event.target.parentNode.removeChild(event.target);
-  //console.log("delete clicked");
-  //console.log(event);
 }
