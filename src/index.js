@@ -12,7 +12,6 @@ main.addEventListener("submit", (event) => {
 
     let button = document.createElement("button");
     button.textContent = "Delete";
-    button.classList.add("deletebtn");
     button.addEventListener("click", deleteParent);
     li.append(span, button);
 
@@ -23,7 +22,7 @@ main.addEventListener("submit", (event) => {
   }
 });
 
-let deletebtns = main.getElementsByClassName("deletebtn");
+let deletebtns = main.querySelectorAll("#task-list button");
 for (var i = 0; i < deletebtns.length; i++) {
   deletebtns[i].addEventListener("click", deleteParent);
 }
