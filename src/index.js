@@ -5,27 +5,30 @@ main.addEventListener("submit", (event) => {
   event.preventDefault();
   let formInput = main.getElementsByTagName('input')[0].value;
   if (formInput !== "") {
-    let li = document.createElement("li");
-
-    let span = document.createElement("span");
-    span.textContent = formInput;
-
-    let editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.addEventListener("click", editTodo);
-
-    let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("deletebtn");
-    deleteButton.addEventListener("click", deleteParent);
-    li.append(span, editButton, deleteButton);
-
-
+    let li = createLi(formInput);
     taskList.append(li);
 
     main.getElementsByTagName('input')[0].value = "";
   }
 });
+
+function createLi(input) {
+  let li = document.createElement("li");
+
+  let span = document.createElement("span");
+  span.textContent = input;
+
+  let editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  editButton.addEventListener("click", editTodo);
+
+  let deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.classList.add("deletebtn");
+  deleteButton.addEventListener("click", deleteParent);
+  li.append(span, editButton, deleteButton);
+  return li;
+}
 
 let deletebtns = main.getElementsByClassName("deletebtn");
 for (var i = 0; i < deletebtns.length; i++) {
@@ -44,6 +47,7 @@ for (var i = 0; i < editbtns.length; i++) {
 function editTodo(event) {
   let newTodo = prompt("Edit Todo");
   if (newTodo !== "" && newTodo != null) {
-    event.target.parentNode.textContent = newTodo;
+    let li = createLi(newTodo);
+    event.target.parentNode.replaceWith(li)
   }
 }
