@@ -31,3 +31,13 @@ for (var i = 0; i < deletebtns.length; i++) {
 function deleteParent(event) {
   event.target.parentNode.parentNode.removeChild(event.target.parentNode);
 }
+
+let editbtns = main.getElementsByClassName("editbtn");
+for (var i = 0; i < editbtns.length; i++) {
+  editbtns[i].addEventListener("click", editTodo);
+}
+
+function editTodo(event) {
+  let newTodo = prompt("Edit Todo");
+  event.target.parentNode.textContent = newTodo;
+}
