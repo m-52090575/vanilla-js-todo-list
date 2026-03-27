@@ -43,5 +43,7 @@ for (var i = 0; i < editbtns.length; i++) {
 
 function editTodo(event) {
   let newTodo = prompt("Edit Todo");
-  event.target.parentNode.textContent = newTodo;
+  if (newTodo !== "" && newTodo != null) {
+    event.target.parentNode.textContent = newTodo;
+  }
 }
