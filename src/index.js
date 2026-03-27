@@ -1,5 +1,5 @@
-var main = document.getElementById("main");
-var taskList = document.getElementById("task-list");
+let main = document.getElementById("main");
+let taskList = document.getElementById("task-list");
 
 main.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -23,7 +23,7 @@ main.addEventListener("submit", (event) => {
   }
 });
 
-var deletebtns = main.getElementsByClassName("deletebtn");
+let deletebtns = main.getElementsByClassName("deletebtn");
 for (var i = 0; i < deletebtns.length; i++) {
   deletebtns[i].addEventListener("click", deleteParent);
 }
