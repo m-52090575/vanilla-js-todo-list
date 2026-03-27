@@ -1,1 +1,1 @@
-add and delete tasks
+add, edit, and delete tasks
