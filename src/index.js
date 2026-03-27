@@ -1,24 +1,6 @@
 let main = document.getElementById("main");
 let taskList = document.getElementById("task-list");
 
-function createLi(input) {
-  let li = document.createElement("li");
-
-  let span = document.createElement("span");
-  span.textContent = input;
-
-  let editButton = document.createElement("button");
-  editButton.textContent = "Edit";
-  editButton.addEventListener("click", editTodo);
-
-  let deleteButton = document.createElement("button");
-  deleteButton.textContent = "Delete";
-  deleteButton.classList.add("deletebtn");
-  deleteButton.addEventListener("click", deleteParent);
-  li.append(span, editButton, deleteButton);
-  return li;
-}
-
 function deleteParent(event) {
   event.target.parentNode.parentNode.removeChild(event.target.parentNode);
 }
