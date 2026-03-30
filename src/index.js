@@ -10,7 +10,7 @@ function editTodo(event) {
   let li = event.target.parentNode.parentNode;
   let oldTodo = li.children[0].textContent;
   let newTodo = prompt("Edit Todo", oldTodo);
-  if (newTodo !== "" && newTodo != null) {
+  if (newTodo != null && newTodo !== "") {
     li.children[0].textContent = newTodo;
   }
 }
