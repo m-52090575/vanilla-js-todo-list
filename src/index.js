@@ -27,11 +27,14 @@ main.addEventListener("submit", (event) => {
     editButton.textContent = "Edit";
     editButton.addEventListener("click", editTodo);
 
+    let whitespace = document.createElement("span")
+    whitespace.textContent = " ";
+
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("deletebtn");
     deleteButton.addEventListener("click", deleteTodo);
-    div.append(editButton, deleteButton);
+    div.append(editButton, whitespace, deleteButton);
 
     li.append(span, div);
 
