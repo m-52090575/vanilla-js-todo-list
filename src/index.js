@@ -27,6 +27,7 @@ main.addEventListener("submit", (event) => {
     let div = document.createElement("div");
     let editButton = document.createElement("button");
     editButton.textContent = "Edit";
+    editButton.classList.add("editbtn");
     editButton.addEventListener("click", editTodo);
 
     let deleteButton = document.createElement("button");
