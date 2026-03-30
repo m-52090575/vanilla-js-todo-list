@@ -1,15 +1,15 @@
 let main = document.getElementById("main");
 let taskList = document.getElementById("task-list");
 
-function deleteParent(event) {
-  event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+function deleteTodo(event) {
+  event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
 }
 
 function editTodo(event) {
-  let oldTodo = event.target.parentNode.children[0].textContent;
+  let oldTodo = event.target.parentNode.parentNode.children[0].textContent;
   let newTodo = prompt("Edit Todo", oldTodo);
   if (newTodo !== "" && newTodo != null) {
-    event.target.parentNode.children[0].textContent = newTodo;
+    event.target.parentNode.parentNode.children[0].textContent = newTodo;
   }
 }
 
@@ -22,6 +22,7 @@ main.addEventListener("submit", (event) => {
     let span = document.createElement("span");
     span.textContent = formInput;
 
+    let div = document.createElement("div");
     let editButton = document.createElement("button");
     editButton.textContent = "Edit";
     editButton.addEventListener("click", editTodo);
@@ -29,8 +30,10 @@ main.addEventListener("submit", (event) => {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("deletebtn");
-    deleteButton.addEventListener("click", deleteParent);
-    li.append(span, editButton, deleteButton);
+    deleteButton.addEventListener("click", deleteTodo);
+    div.append(editButton, deleteButton);
+
+    li.append(span, div);
 
 
     taskList.append(li);
@@ -41,7 +44,7 @@ main.addEventListener("submit", (event) => {
 
 let deletebtns = main.getElementsByClassName("deletebtn");
 for (var i = 0; i < deletebtns.length; i++) {
-  deletebtns[i].addEventListener("click", deleteParent);
+  deletebtns[i].addEventListener("click", deleteTodo);
 }
 
 let editbtns = main.getElementsByClassName("editbtn");

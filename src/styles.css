@@ -10,7 +10,7 @@ body {
     width: 600px;
   }
 }
-#task-list button {
+#task-list li div {
   float: right;
 }
 #task-list li {
