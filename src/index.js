@@ -2,14 +2,16 @@ let main = document.getElementById("main");
 let taskList = document.getElementById("task-list");
 
 function deleteTodo(event) {
-  event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
+  let li =  event.target.parentNode.parentNode;
+  li.parentNode.removeChild(li);
 }
 
 function editTodo(event) {
-  let oldTodo = event.target.parentNode.parentNode.children[0].textContent;
+  let li = event.target.parentNode.parentNode;
+  let oldTodo = li.children[0].textContent;
   let newTodo = prompt("Edit Todo", oldTodo);
   if (newTodo !== "" && newTodo != null) {
-    event.target.parentNode.parentNode.children[0].textContent = newTodo;
+    li.children[0].textContent = newTodo;
   }
 }
 
