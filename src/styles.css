@@ -1,18 +1,22 @@
 body {
-  font-family: sans-serif;
+    font-family: sans-serif;
 }
+
 #task-list .deletebtn {
-  color: white;
-  background-color: red;
+    color: white;
+    background-color: red;
 }
+
 @media screen and (width >= 900px) {
-  #main {
-    width: 600px;
-  }
+    #main {
+        width: 600px;
+    }
 }
+
 #task-list li div {
-  float: right;
+    float: right;
 }
+
 #task-list li {
-  clear: both;
+    clear: both;
 }
