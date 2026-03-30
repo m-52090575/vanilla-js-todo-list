@@ -2,7 +2,7 @@ let main = document.getElementById("main");
 let taskList = document.getElementById("task-list");
 
 function deleteTodo(event) {
-  let li =  event.target.parentNode.parentNode;
+  let li = event.target.parentNode.parentNode;
   li.parentNode.removeChild(li);
 }
 
