@@ -3,7 +3,10 @@ let taskList = document.getElementById("task-list");
 
 function deleteTodo(event) {
     let li = event.target.parentNode.parentNode;
-    li.parentNode.removeChild(li);
+    let del = confirm("Delete todo?");
+    if (del) {
+        li.parentNode.removeChild(li);
+    }
 }
 
 function editTodo(event) {
